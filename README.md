@@ -1,0 +1,2 @@
+# computational_intelligence_laboratories
+Computational Intelligence Labolatories, university classes
