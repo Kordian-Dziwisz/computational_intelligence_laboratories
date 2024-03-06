@@ -11,6 +11,14 @@
             "program": "src/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/classification"
+        },
+        {
+            "name": "classification 2",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/classification_2"
         }
     ]
 }

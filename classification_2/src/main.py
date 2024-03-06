@@ -1,6 +1,7 @@
 """Organizing data"""
 
 from pathlib import Path
+from sklearn.model_selection import train_test_split
 
 import pandas as pd
 # import numpy as np
@@ -13,44 +14,14 @@ def get_data(path: str)->pd.DataFrame:
 
     return pd.read_csv(path)
 
-def print_empty_fields(df: pd.DataFrame) -> None:
-    """Prints missing fields summary to std"""
-    print(df.isnull().sum())
+def get_data_sets(df: pd.DataFrame)->(pd.DataFrame, pd.DataFrame):
+    """create 2 data sets"""
 
-
-def fix_ranges(df: pd.DataFrame) -> None:
-    """Fixes dataframe columns"""
-
-    def get_without_empty_rows(column_names: list) -> pd.DataFrame:
-        """deletes "empty" rows from specific dataframe columns"""
-        for column_name in column_names:
-            final_df = df[df[column_name] != '-']
-        return final_df
-    
-    def get_average(column_name: str) -> float:
-        """get avg of a specific colummn"""
-        return df[column_name].astype(float).avg()
-
-            avg = df[(df[column_name] != "-") and (df[column_name] > 0) and (df[column_name] < 15)][column_name].astype(float)
-            df[df[column_name] == "-" or df[column_name] <= 0 or df[column_name] >= 15][column_name]=avg
-
-    
-    fix_columns(["sepal.length", "sepal.width", "petal.length", "petal.width"])
-    0
-
-def fix_species(df: pd.DataFrame) -> None:
-    """Fixes species"""
-    tmp = df[df["variety"] not in []]
-
-    1
-
+    return train_test_split(df.values, train_size=0.7, random_state=13)
 
 def main()->None:
     """"Main function"""
     df = get_data(f"{Path.cwd()}/assets/iris_with_errors.csv")
-    print_empty_fields(df)
-    fix_ranges(df)
-    fix_species(df)
 
     df = pd.read_csv(f"{Path.cwd()}/assets/iris_with_errors.csv")
 

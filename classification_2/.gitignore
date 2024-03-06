@@ -2,5 +2,5 @@ lib/*
 lib64
 bin/*
 include/*
-src/pyvenv.cfg
+pyvenv.cfg
 assets/*
