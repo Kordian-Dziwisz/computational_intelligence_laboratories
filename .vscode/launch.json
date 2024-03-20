@@ -19,6 +19,14 @@
             "program": "src/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/classification_2"
+        },
+        {
+            "name": "neural 1",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/neural_networks_01"
         }
     ]
 }
