@@ -27,6 +27,14 @@
             "program": "src/main.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/neural_networks_01"
+        },
+        {
+            "name": "image recognition",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/keras-iris.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/image_recognition"
         }
     ]
 }

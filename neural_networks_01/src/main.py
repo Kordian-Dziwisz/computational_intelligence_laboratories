@@ -12,7 +12,7 @@ import pandas as pd
 def forward_pass(wiek: float, waga: float, wzrost:float) -> float:
     """simple forward pass function with predefined multipliers"""
     def f_act(n):
-        return 1/(1+math.e^-n)
+        return 1/(1+math.e**-n)
     w_11_21 = -0.46122
     w_11_22 = 0.78548
     w_12_21 = 0.97314
@@ -30,6 +30,10 @@ def forward_pass(wiek: float, waga: float, wzrost:float) -> float:
     hidden2_po_aktywacji = f_act(hidden2)
     output = hidden1_po_aktywacji * w_21_o + hidden2_po_aktywacji * w_22_o + b_o
     return output
+
+result = forward_pass(23, 75, 176)
+1
+
 
 def main() -> None:
     """main function"""
@@ -55,7 +59,7 @@ def main() -> None:
     #configuring our classifier
     clf = MLPClassifier(solver='lbfgs',
                     alpha=1e-5,
-                    hidden_layer_sizes=(6,3),
+                    hidden_layer_sizes=(3, 3),
                     random_state=1)
 
     clf.fit(train_data, train_labels)

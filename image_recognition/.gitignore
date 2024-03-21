@@ -1,0 +1,7 @@
+# assets
+*.csv
+*.zip
+
+# misc
+*.h5
+*.png
