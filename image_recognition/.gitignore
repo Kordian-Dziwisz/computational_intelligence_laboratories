@@ -5,3 +5,7 @@
 # misc
 *.h5
 *.png
+
+#dogs and cats train data
+*/train/*
+dogs_and_cats/model_*/**

@@ -43,6 +43,14 @@
             "program": "src/keras-mnist-cnn.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/image_recognition"
+        },
+        {
+            "name": "image recognition - dogs and cats",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "dogs_and_cats.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/image_recognition/dogs_and_cats"
         }
     ]
 }
