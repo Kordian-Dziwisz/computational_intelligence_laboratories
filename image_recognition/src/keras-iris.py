@@ -102,3 +102,12 @@ model.save('iris_model.h5')
 plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 
 
+# co do podanego kodu:
+# laduje dane, 
+# transformuje wg powyzszego wzoru
+# encoding labeli (rezultatów), podane powyżej
+# podział na zesta testowy i treningowy
+# ładowanie modelu, który wcześniej (tutaj) utworzyliśmy
+# dalsza nauka modelu i zapisanie jego zaktualizowanej wersji
+# ewaluacja nowego modelu
+

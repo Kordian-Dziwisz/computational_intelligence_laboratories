@@ -13,18 +13,28 @@ from tensorflow.keras.callbacks import History
 
 # Preprocess data
 train_images = train_images.reshape((train_images.shape[0], 28, 28, 1)).astype('float32') / 255
+# reshaping jest dokonywany w celu kompatybilności z Keras
+# w praktyce oznacza to zamianę każdego obrazu na obraz o rozmiarze 28x28 i 1 kanale kolorów (czarny lub biały)
 test_images = test_images.reshape((test_images.shape[0], 28, 28, 1)).astype('float32') / 255
 train_labels = to_categorical(train_labels)
+# https://www.tensorflow.org/api_docs/python/tf/keras/utils/to_categorical
+# tutaj robimy coś w stylu OneHotEncoder
 test_labels = to_categorical(test_labels)
 original_test_labels = np.argmax(test_labels, axis=1)  # Save original labels for confusion matrix
 
 # Define model
 model = Sequential([
     Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+    # tutaj konwolucja, pierwsza warstwa
     MaxPooling2D((2, 2)),
+    # https://paperswithcode.com/method/max-pooling
+    # tutaj max pooling, druga warstwa 
     Flatten(),
+    # tutaj flattening, czyli zamiana naszych dotychczasowych obrazów na inputy do neural network
     Dense(64, activation='relu'),
+    # tutaj 1 warstwa sieci
     Dense(10, activation='softmax')
+    # tutaj 2 warstwa sieci
 ])
 
 # Compile model

@@ -29,10 +29,18 @@
             "cwd": "${workspaceFolder}/neural_networks_01"
         },
         {
-            "name": "image recognition",
+            "name": "image recognition keras",
             "type": "debugpy",
             "request": "launch",
             "program": "src/keras-iris.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/image_recognition"
+        },
+        {
+            "name": "image recognition - numbers",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "src/keras-mnist-cnn.py",
             "console": "integratedTerminal",
             "cwd": "${workspaceFolder}/image_recognition"
         }
